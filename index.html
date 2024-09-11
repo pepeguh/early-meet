@@ -14,7 +14,10 @@
   </head>
   <body>
     <div class="main_div" id="main_div">
-      <div class="top_section"></div>
+      <div class="top_section">
+        <audio id="audioPlayer" src="track.mp3"></audio>
+        <p style=" transition:all 1.2s ease-in-out;color:  rgba(216, 237, 255, 0.897); position: absolute; text-wrap: nowrap; top: 40px; left: 75px; font-size: 22px; opacity: 0;" id="flower_present">эти цветочки для тебя!</p>
+      </div>
 
       <div class="mid_section">
         <div class="anim_place">
@@ -427,7 +430,7 @@
       </div>
 
       <div class="bot_section">
-        <p class="compliments" id="compliments">ты самая красивая | и тебе блин уже 20!!! | время с тобой, поверь, мне уже точно никогда не получится забыть. я и не хочу | ты самая любимая | у тебя самые красивые глаза | у тебя есть то, чего нет у остальных | 244 | today, tomorrow, forever | солнышко моё | крутышка! | совсем скоро я буду рядом | сходим в мак твой ахахах | покажешь мне эту дурацкую москву | а я буду тебя немного подбешивать, чтобы ты не расслаблялась | самое главное - наступил твой день рождения, день в который на свет появилось второе солнышко | я | тебя | люблю | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |</p>
+        <p class="compliments" id="compliments">ты самая красивая | и тебе блин уже 20 !!! | время с тобой, поверь, мне уже точно никогда не получится забыть. я и не смогу | ты самая любимая | у тебя самые красивые глаза | у тебя есть то, чего нет у остальных | 244 | today, tomorrow, forever | солнышко моё | крутышка! | совсем скоро я буду рядом | сходим в мак твой ахахах | покажешь мне эту дурацкую москву | а я буду тебя немного подбешивать, чтобы ты не расслаблялась | самое главное - наступил твой день рождения, день в который на свет появилось второе солнышко | я | тебя | люблю | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |</p>
         <button class="start_btn" id="ageBtn" onclick="{ageChange()}">
           ЖМЯК СЮДА
         </button>
@@ -438,10 +441,14 @@
       </div>
     </div>
     <script>
-        onload = () =>{
+      onload = () =>{
         document.body.classList.remove("container");
-};
-
+        // const playAudio = () => {
+          
+        // };
+      };
+      const audioPlayer = document.getElementById('audioPlayer');
+      const flower_present = document.getElementById('flower_present')
       const age18 = document.getElementById("age18");
       const age19 = document.getElementById("age19");
       const age20 = document.getElementById("age20");
@@ -455,6 +462,9 @@
       const main_div = document.getElementById('main_div')
       const play_btn = document.getElementById('play_btn')
       const compliments = document.getElementById('compliments')
+      const flower__leaf = document.getElementsByClassName('flower__leaf')
+      const flower__light = document.getElementsByClassName('flower__light')
+     
       let randNum = 0;
       let randColor = '#ecf1bb'
       const colorInterval = setInterval(()=>{
@@ -471,11 +481,19 @@
         }else{
           randColor = '#94e2ec'
         }
+        
+        Array.from(flower__light).forEach(item => {
+          item.style.backgroundColor = randColor
+        });
+        Array.from(flower__leaf).forEach(item => {
+          item.style.backgroundColor = randColor
+        });
         play_btn.style.color = randColor
         compliments.style.color = randColor
       },800)
       const ageChange = () => {
         sizeAndPosChange();
+        audioPlayer.play();
       };
       const sizeAndPosChange = () => {
         age18.style.transform = "translateY(-40px)";
@@ -552,8 +570,11 @@
              
         },1800)
         setTimeout(()=>{
+        flower_present.style.opacity = "100%";
+      },2100)
+        setTimeout(()=>{
           compliments.style.opacity = "100%"
-          compliments.style.transform = 'translateX(-3300px)'
+          compliments.style.transform = 'translateX(-3950px)'
             play_btn.style.opacity = "100%";
         },3100)
       };
