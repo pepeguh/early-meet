@@ -427,10 +427,11 @@
       </div>
 
       <div class="bot_section">
+        <p class="compliments" id="compliments">ты самая красивая | и тебе блин уже 20!!! | время с тобой, поверь, мне уже точно никогда не получится забыть. я и не хочу | ты самая любимая | у тебя самые красивые глаза | у тебя есть то, чего нет у остальных | 244 | today, tomorrow, forever | солнышко моё | крутышка! | совсем скоро я буду рядом | сходим в мак твой ахахах | покажешь мне эту дурацкую москву | а я буду тебя немного подбешивать, чтобы ты не расслаблялась | самое главное - наступил твой день рождения, день в который на свет появилось второе солнышко | я | тебя | люблю | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |❤️ | ❤️ | ❤️ | ❤️ | ❤️ | ❤️ |</p>
         <button class="start_btn" id="ageBtn" onclick="{ageChange()}">
           ЖМЯК СЮДА
         </button>
-        <p class="play_btn" id="play_btn">▶</p>
+        <p class="play_btn" id="play_btn">▷</p>
 
     
 
@@ -453,7 +454,26 @@
       const flower_div = document.getElementById("flower_div");
       const main_div = document.getElementById('main_div')
       const play_btn = document.getElementById('play_btn')
-
+      const compliments = document.getElementById('compliments')
+      let randNum = 0;
+      let randColor = '#ecf1bb'
+      const colorInterval = setInterval(()=>{
+        randNum = Math.random().toFixed(2)
+        console.log(randNum)
+        if(randNum<=0.2){
+          randColor = '#ecf1bb'
+        }else if(randNum<=0.4){
+          randColor = '#a2ebae'
+        }else if(randNum<=0.6){
+           randColor = '#e3a2eb'
+        }else if(randNum<=0.8){
+           randColor = '#949aec'
+        }else{
+          randColor = '#94e2ec'
+        }
+        play_btn.style.color = randColor
+        compliments.style.color = randColor
+      },800)
       const ageChange = () => {
         sizeAndPosChange();
       };
@@ -532,6 +552,8 @@
              
         },1800)
         setTimeout(()=>{
+          compliments.style.opacity = "100%"
+          compliments.style.transform = 'translateX(-3300px)'
             play_btn.style.opacity = "100%";
         },3100)
       };

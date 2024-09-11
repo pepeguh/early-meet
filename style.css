@@ -27,14 +27,29 @@
     flex-direction: column;
     align-items: center;
 }
+.compliments{
+  padding-top: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* transition: all 0.9s ease-in-out; */
+  /* СДЕЛАЙ ОТДЕЛЬНОЕ ВРЕМЯ ДЛЯ ПРОПЛЫВАНИЯ */
+  opacity: 0%;
+  transition:
+  opacity 0.1s ease-in-out,
+  color 0.9s ease-in-out,
+  transform 45s linear;
+  transform: translateX(3300px);
+}
 .play_btn{
    position: absolute;
    top: 650px;
     transition: all 2.2s ease-in-out;
+    transition: color 0.5s ease-in-out;
     opacity: 0;
     /* display: none; */
     font-size: 80px;
-    color: #ecf1bb;
+    font-weight: bolder;
+    color: #94e2ec;
 }
 .age_S{
      transition: all 1.1s ease-in-out;
@@ -94,7 +109,7 @@
     min-height: 100vh;
     background-color: var(--dark-color);
     overflow: hidden;
-    perspective: 1000px;
+    /* perspective: 1000px; */
   }
   
   .night {
