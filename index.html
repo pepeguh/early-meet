@@ -16,7 +16,7 @@
     <div class="main_div" id="main_div">
       <div class="top_section">
         <audio id="audioPlayer" src="track.mp3"></audio>
-        <p style=" transition:all 1.2s ease-in-out;color:  rgba(216, 237, 255, 0.897); position: absolute; text-wrap: nowrap; top: 40px; left: 75px; font-size: 22px; opacity: 0;" id="flower_present">эти цветочки для тебя!</p>
+        <p class="flower_top_text" id="flower_present">эти цветочки для тебя!</p>
       </div>
 
       <div class="mid_section">
@@ -493,7 +493,7 @@
       },800)
       const ageChange = () => {
         sizeAndPosChange();
-        audioPlayer.play();
+        // audioPlayer.play();
       };
       const sizeAndPosChange = () => {
         age18.style.transform = "translateY(-40px)";
