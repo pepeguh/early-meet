@@ -32,10 +32,11 @@
 .flower_top_text{
   transition:all 1.2s ease-in-out;
   color:  #d8edffe5;
-  position: absolute;
+  padding-top: 30px;
+  position: relative;
   text-wrap: nowrap;
   top: 40px;
-  left: 75px;
+  /* left: 75px; */
   font-size: 22px;
   opacity: 0;
 }
