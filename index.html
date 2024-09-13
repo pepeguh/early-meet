@@ -582,18 +582,33 @@
           // play_btn.style.opacity = "100%";
           // play_btn.style.display= "block";
         }, 3100);
+        setTimeout(()=>{
+          flower_present.style.opacity = "0";
+        },20000)
+        setTimeout(()=>{
+          flower_present.innerText =' '
+          flower_present.style.opacity = "100%";
+        },48000)
         setTimeout(() => {
+
           // еще добавить текст!!!!!!
           let texts = [
-            "Всё еще здесь?    ",
+            "ещё здесь?    ",
             "...   ",
             "прости за ребёнка(((    ",
             "...   ",
-            "что блин ещё то сказать    ",
+            "я до сих пор не понимаю   ",
+            "как я так влюбился   ",
+            "боже, мне так нравится   ",
+            "каждый раз звонить тебе   ",
+            "и предвкушать то чувство,   ",
+            "когда я вновь вижу   ",
+             "свою бусинку   ",
+            "я очень скучаю    ",
             "ааа  ",
             "хорошего дня рождения!!!    ",
             "...   ",
-            "почти люблю    ",
+            "люблю    ",
           ];
           let currentTextIndex = 0;
           let currentCharIndex = 0;
@@ -618,7 +633,18 @@
             }
           }
           addLetter();
-        }, 47000);
+        }, 50000);
+        setTimeout(()=>{
+          flower_present.style.color = '#f38d8ddc'
+          flower_present.style.opacity = '0'
+          flower_div.style.opacity = '0'
+
+
+        },108000)
+        setTimeout(()=>{
+           flower_div.style.display = 'none'
+           
+        },110000)
       };
     </script>
   </body>
