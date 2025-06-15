@@ -115,6 +115,46 @@
 }
 
 
+.first_top_div{
+  align-items: center;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+.first_bot_div{
+  color: white;
+  height: 75vh ;
+
+}
+.first_bot_div_child{
+  display: flex;
+  color: white;
+  justify-content: center;
+  justify-content: center;
+   
+}
+
+.loader {
+   margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    border: 5px solid #FFF;
+    border-bottom-color: #b700ff;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
 /* ДАЛЬШЕ ЦВЕТОК */
 :root {
     --dark-color: #000;
@@ -1461,3 +1501,7 @@
     -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important;
   }/*# sourceMappingURL=main.css.map */
+
+
+
+
